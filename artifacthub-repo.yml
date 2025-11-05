@@ -1,0 +1,9 @@
+repositoryID: your-unique-repo-id
+kind: helm
+name: helm-nginx
+displayName: Helm Nginx Charts
+url: https://github.com/srikanth-karthi/helm-nginx
+description: Custom Helm charts for Nginx-based web applications
+owners:
+  - name: srikanth-karthi
+    email: srikanthkarthi2003@gmail.com
