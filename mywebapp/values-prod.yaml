@@ -1,0 +1,13 @@
+replicaCount: 3
+
+image:
+  repository: nginx
+  tag: "1.25"
+  pullPolicy: IfNotPresent
+
+service:
+  type: LoadBalancer
+  port: 80
+
+config:
+  homepage: "<h1>Production Environment</h1><p>Welcome to our production site! 🚀</p>"

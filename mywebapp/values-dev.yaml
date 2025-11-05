@@ -1,0 +1,13 @@
+replicaCount: 1
+
+image:
+  repository: nginx
+  tag: "latest"
+  pullPolicy: Always
+
+service:
+  type: NodePort
+  port: 80
+
+config:
+  homepage: "<h1>Development Environment</h1><p>This is the DEV environment 🔧</p>"
