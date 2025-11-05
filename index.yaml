@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  mywebapp:
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2025-11-05T19:42:07.38366+05:30"
+    description: A Helm chart for deploying a custom Nginx web application
+    digest: 55a5a1badd405e28ca14eee62a71fee845b42515b414c5f52e0c92fd04b4547b
+    name: mywebapp
+    type: application
+    urls:
+    - https://github.com/srikanth-karthi/helm-nginx/releases/download/v0.1.0/mywebapp-0.1.0.tgz
+    version: 0.1.0
+generated: "2025-11-05T19:42:07.383113+05:30"
