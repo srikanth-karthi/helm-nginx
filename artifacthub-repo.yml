@@ -1,4 +1,4 @@
-repositoryID: helm-nginx
+repositoryID: d6764258-4d7b-44ec-981e-48b97b2eeff0
 kind: helm
 name: helm-nginx
 displayName: Helm Nginx Charts
