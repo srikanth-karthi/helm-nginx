@@ -1,0 +1,103 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "title": "MyWebApp Helm Chart Values Schema",
+  "description": "Schema for validating values.yaml configuration for the MyWebApp Helm chart",
+  "required": [
+    "replicaCount",
+    "image",
+    "service",
+    "config"
+  ],
+  "properties": {
+    "replicaCount": {
+      "type": "integer",
+      "title": "Replica Count",
+      "description": "Number of pod replicas to deploy",
+      "minimum": 1,
+      "default": 2
+    },
+    "image": {
+      "type": "object",
+      "title": "Container Image Configuration",
+      "description": "Configuration for the container image",
+      "required": [
+        "repository",
+        "tag",
+        "pullPolicy"
+      ],
+      "properties": {
+        "repository": {
+          "type": "string",
+          "title": "Image Repository",
+          "description": "Container image repository",
+          "default": "nginx"
+        },
+        "tag": {
+          "type": "string",
+          "title": "Image Tag",
+          "description": "Container image tag",
+          "default": "latest"
+        },
+        "pullPolicy": {
+          "type": "string",
+          "title": "Image Pull Policy",
+          "description": "Kubernetes image pull policy",
+          "enum": [
+            "Always",
+            "IfNotPresent",
+            "Never"
+          ],
+          "default": "IfNotPresent"
+        }
+      }
+    },
+    "service": {
+      "type": "object",
+      "title": "Service Configuration",
+      "description": "Kubernetes service configuration",
+      "required": [
+        "type",
+        "port"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "title": "Service Type",
+          "description": "Kubernetes service type",
+          "enum": [
+            "ClusterIP",
+            "NodePort",
+            "LoadBalancer",
+            "ExternalName"
+          ],
+          "default": "ClusterIP"
+        },
+        "port": {
+          "type": "integer",
+          "title": "Service Port",
+          "description": "Port that the service will expose",
+          "minimum": 1,
+          "maximum": 65535,
+          "default": 80
+        }
+      }
+    },
+    "config": {
+      "type": "object",
+      "title": "Application Configuration",
+      "description": "Custom configuration for the web application",
+      "required": [
+        "homepage"
+      ],
+      "properties": {
+        "homepage": {
+          "type": "string",
+          "title": "Homepage Content",
+          "description": "HTML content for the homepage",
+          "default": "<h1>Welcome to My WebApp!</h1><p>Deployed via Helm 🚀</p>"
+        }
+      }
+    }
+  }
+}

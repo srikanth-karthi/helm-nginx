@@ -4,3 +4,16 @@ description: A Helm chart for deploying a custom Nginx web application
 type: application
 version: 0.1.0
 appVersion: "1.0"
+maintainers:
+  - name: srikanth-karthi
+    email: srikanthkarthi2003@gmail.com
+annotations:
+  # Mark as official if you own the software this chart deploys
+  # For third-party software (like nginx), this should be false or omitted
+  artifacthub.io/containsSecurityUpdates: "false"
+  artifacthub.io/changes: |
+    - kind: added
+      description: Initial release with values schema support
+  # Set to true only if you are the owner/maintainer of the primary software (nginx in this case)
+  # For nginx, only the official nginx team should set this to true
+  # artifacthub.io/official: "false"
